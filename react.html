@@ -1,0 +1,58 @@
+<html>
+<head>
+    <!-- References -->
+    <!-- React in 5 minutes: https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4 -->
+    <!-- Learn React: https://scrimba.com/playlist/p7P5Hd -->
+
+    <!-- <script src="https://unpkg.com/react@15/dist/react.min.js"></script> -->
+    <script src="react.min.js"></script>
+    <!-- <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script> -->
+    <script src="react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    // Props implementation
+    // class Hello extends React.Component {
+    //     render() {
+    //         return <h1>Hello {this.props.message}!</h1>;
+    //     }
+    // }
+    // ReactDOM.render(
+    //     <Hello message="my friend (from props)" />,
+    //     document.getElementById("root")
+    // );
+
+    // State implementation
+    class Hello extends React.Component {
+        constructor(){
+            super();
+            this.state = {
+                message: "my friend (from state)!"
+            };
+            this.updateMessage = this.updateMessage.bind(this);
+        }
+        updateMessage() {
+            this.setState({
+                message: "my friend (from changed state)!"
+            });
+        }
+        render() {
+             return (
+               <div>
+                 <h1>Hello {this.state.message}!</h1>
+                 <button onClick={this.updateMessage}>Click me!</button>
+               </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Hello />,
+        document.getElementById("root")
+    );
+
+    </script>
+</body>
+</html>
