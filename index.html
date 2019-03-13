@@ -1,8 +1,8 @@
 <html>
 <head>
     <!-- References -->
-    <!-- React in 5 minutes: https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4 -->
-    <!-- Learn React: https://scrimba.com/playlist/p7P5Hd -->
+    <!-- "React in 5 minutes": https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4 -->
+    <!-- Learn React (48 video series): https://scrimba.com/playlist/p7P5Hd -->
 
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
     <!-- version: https://unpkg.com/react@15/dist/react.min.js -->
@@ -15,8 +15,21 @@
 <body>
     <div id="root"></div>
 
-    <!-- <script src="components/HelloExample.js" type="text/babel"></script> -->
-    <script src="components/MyInfo.js" type="text/babel"></script>
-    <script src="components/index.js" type="text/babel"></script>
+    <!-- <script src="components/examples/HelloExample.js" type="text/babel"></script> -->
+
+    <!-- <script src="components/examples/MyInfoExample.js" type="text/babel"></script> -->
+
+    <!-- <script src="components/examples/AppExample/AwesomeHeader.js" type="text/babel"></script>
+    <script src="components/examples/AppExample/MainContent.js" type="text/babel"></script>
+    <script src="components/examples/AppExample/AwesomeFooter.js" type="text/babel"></script>
+    <script src="components/examples/AppExample/App.js" type="text/babel"></script> -->
+
+    <script src="components/examples/ToDoExample/App.js" type="text/babel"></script>
+    <script type="text/babel">
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        );
+    </script>
 </body>
 </html>
