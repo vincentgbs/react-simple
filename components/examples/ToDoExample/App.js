@@ -17,7 +17,7 @@ function App() {
             <input type="checkbox" />
             <p>Placeholder text here</p>
         </div>
-    )
+    );
 }
 
 // export default App

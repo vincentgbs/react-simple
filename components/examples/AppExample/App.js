@@ -12,7 +12,7 @@ function App() {
             <MainContent />
             <AwesomeFooter />
         </div>
-    )
+    );
 }
 
 // export default App

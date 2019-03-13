@@ -8,5 +8,5 @@ function MainContent() {
             </ul>
             <p>This is where most of my content will go...</p>
         </main>
-    )
+    );
 }
