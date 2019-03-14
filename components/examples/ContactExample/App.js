@@ -19,7 +19,6 @@ function App() {
                     {
                         name: "Fluffykins",
                         imgUrl: "http://placekitten.com/400/200",
-                        phone: "(212) 555-2345",
                         email: "fluff@me.com"
                     }
                 }

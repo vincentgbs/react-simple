@@ -6,10 +6,10 @@
 function App() {
     return (
         <div className="todo-list">
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
+            <TodoItem todo="Placeholder text here"/>
+            <TodoItem todo="Placeholder text here"/>
+            <TodoItem todo="Placeholder text here"/>
+            <TodoItem todo="Placeholder text here"/>
         </div>
     );
 }
