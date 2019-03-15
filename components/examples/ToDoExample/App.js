@@ -2,9 +2,18 @@
 
 // import React from "react"
 // import TodoItem from "./TodoItem"
+// import todosData from "./todosData"
 
 class App extends React.Component {
-    createTodos() {
+    constructor() {
+        super();
+        this.state = {
+            todos: todosData
+        };
+
+    }
+
+    createTodos(JSON) {
         const todoComponents = todosData.map(function(td) {
             return <TodoItem key={td.id} todo={td} />
         });
@@ -12,7 +21,7 @@ class App extends React.Component {
     }
 
     render() {
-        const display = this.createTodos();
+        const display = this.createTodos(this.todosData);
 
         return (
             <div className="todo-list">

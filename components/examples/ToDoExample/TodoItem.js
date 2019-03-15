@@ -1,7 +1,7 @@
 // import React from "react"
 
 class TodoItem extends React.Component {
-    render(props) {
+    render() {
         return (
             <div className="todo-item">
                 <input type="checkbox" checked={this.props.todo.completed} />
