@@ -4,12 +4,13 @@
 // import TodoItem from "./TodoItem"
 
 function App() {
+    const todoComponents = todosData.map(function(td) {
+        return <TodoItem key={td.id} todo={td} />
+    });
+
     return (
         <div className="todo-list">
-            <TodoItem todo="Placeholder text here"/>
-            <TodoItem todo="Placeholder text here"/>
-            <TodoItem todo="Placeholder text here"/>
-            <TodoItem todo="Placeholder text here"/>
+            {todoComponents}
         </div>
     );
 }
