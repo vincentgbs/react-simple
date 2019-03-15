@@ -1,12 +1,14 @@
 // import React from "react"
 
-function TodoItem(props) {
-    return (
-        <div className="todo-item">
-            <input type="checkbox" checked={props.todo.completed} />
-            <p>{props.todo.text}</p>
-        </div>
-    );
+class TodoItem extends React.Component {
+    render(props) {
+        return (
+            <div className="todo-item">
+                <input type="checkbox" checked={this.props.todo.completed} />
+                <p>{this.props.todo.text}</p>
+            </div>
+        );
+    }
 }
 
 // export default TodoItem
