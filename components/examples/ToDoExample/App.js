@@ -3,16 +3,23 @@
 // import React from "react"
 // import TodoItem from "./TodoItem"
 
-function App() {
-    const todoComponents = todosData.map(function(td) {
-        return <TodoItem key={td.id} todo={td} />
-    });
+class App extends React.Component {
+    createTodos() {
+        const todoComponents = todosData.map(function(td) {
+            return <TodoItem key={td.id} todo={td} />
+        });
+        return todoComponents;
+    }
 
-    return (
-        <div className="todo-list">
-            {todoComponents}
-        </div>
-    );
+    render() {
+        const display = this.createTodos();
+
+        return (
+            <div className="todo-list">
+                {display}
+            </div>
+        );
+    }
 }
 
 // export default App
