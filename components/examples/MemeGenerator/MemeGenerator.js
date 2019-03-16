@@ -7,8 +7,8 @@ class MemeGenerator extends React.Component {
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: []
         }
-        this.onChange = this.onChange.bind(this);
-        this.generateMeme = this.generateMeme.bind(this);
+        // this.onChange = this.onChange.bind(this); // don't need to bind arrow functions
+        // this.generateMeme = this.generateMeme.bind(this); // don't need to bind arrow functions
     }
 
     componentDidMount() {
@@ -21,12 +21,12 @@ class MemeGenerator extends React.Component {
             });
     }
 
-    onChange(event) {
+    onChange = (event) => {
         const {name, value} = event.target;
         this.setState({ [name]: value });
     }
 
-    generateMeme(event) {
+    generateMeme = (event) => {
         event.preventDefault();  // prevent form from submitting
         const i = Math.floor(Math.random() * this.state.allMemeImgs.length);
         this.setState(function(prevState) {
