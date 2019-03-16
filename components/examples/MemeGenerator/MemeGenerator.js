@@ -21,7 +21,9 @@ class MemeGenerator extends React.Component {
     }
 
     onChange(event) {
-        // 
+        console.log("change");
+        // const {name, value} = event.target;
+        // this.setState({});
     }
 
     render() {
@@ -31,11 +33,13 @@ class MemeGenerator extends React.Component {
                     <input type="text"
                         name="topText"
                         value={this.state.topText}
+                        placeholder="Top Text"
                         onChange={this.onChange}
                     />
                     <input type="text"
                         name="bottomText"
                         value={this.state.bottomText}
+                        placeholder="Bottom Text"
                         onChange={this.onChange}
                     />
                     <button>Gen</button>
