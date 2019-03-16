@@ -1,7 +1,11 @@
 class MemeGenerator extends React.Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            topText: "",
+            bottomText: "",
+            randomImg: "http://i.imgflip.com/1bij.jpg"
+        }
     }
 
     componentDidMounts() {
@@ -11,6 +15,12 @@ class MemeGenerator extends React.Component {
         //     .then(data => {
         //         appObject.setState(data);
         //     });
+    }
+
+    render() {
+        return (
+            <h1>Meme Generator Section</h1>
+        )
     }
 
 }
