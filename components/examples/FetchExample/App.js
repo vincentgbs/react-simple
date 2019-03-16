@@ -12,16 +12,16 @@ class App extends React.Component {
         appObject.setState(function(prevState){
             return ({
                 loading: true,
-                character: prevState.character
+                // character: prevState.character
             });
         });
         setTimeout(function(){
             fetch("https://swapi.co/api/people/1")
                 .then(response => response.json()) // [then] resolve the promise
                 .then(data => {
-                    appObject.setState(function(prevState) {
+                    appObject.setState(function() {
                         return ({
-                            loading: !prevState.loading,
+                            loading: false,
                             character: data
                         });
                     });
