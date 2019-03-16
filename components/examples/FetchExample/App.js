@@ -1,23 +1,40 @@
-// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-// https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 // https://swapi.co/
 
 class App extends React.Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            loading: false,
+            character: {}
+        }
     }
 
     componentDidMount() {
-        fetch("https://swapi.co/api/people/1")
-            .then(response => response.json()) // [then] resolve the promise
-            .then(data => console.log(data)); // continue promise chain
+        let appObject = this;
+        appObject.setState(function(prevState){
+            return ({
+                loading: true,
+                character: prevState.character
+            });
+        });
+        setTimeout(function(){
+            fetch("https://swapi.co/api/people/1")
+                .then(response => response.json()) // [then] resolve the promise
+                .then(data => {
+                    appObject.setState(function() {
+                        return ({
+                            loading: false,
+                            character: data
+                        });
+                    });
+                }); // continue promise chain
+        }, 2500);
     }
 
     render() {
         return (
             <div>
-                Code goes here
+                {this.state.loading ? "Loading" : "API call to get character name: " + this.state.character.name}
             </div>
         )
     }
