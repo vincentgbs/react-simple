@@ -1,5 +1,3 @@
-// https://swapi.co/
-
 class App extends React.Component {
     constructor() {
         super()
