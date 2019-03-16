@@ -26,14 +26,12 @@ class MemeGenerator extends React.Component {
         this.setState({ [name]: value });
     }
 
-    /**
-      * Create a method that, when the "Gen" button is clicked, chooses one of the
-      * memes from our `allMemeImgs` array at random and makes it so that is the
-      * meme image that shows up in the bottom portion of our meme generator site (`.url`)
-      */
     generateMeme(event) {
-        console.log("clicked");
-        event.preventDefault();
+        event.preventDefault();  // prevent form from submitting
+        const i = Math.floor(Math.random() * this.state.allMemeImgs.length);
+        this.setState(function(prevState) {
+            return { randomImg: prevState.allMemeImgs[i].url }
+        });
     }
 
     render() {
