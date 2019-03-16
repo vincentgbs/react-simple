@@ -1,4 +1,5 @@
 // https://reactjs.org/docs/forms.html
+// {/*Form Library: Formik*/}
 
 class App extends React.Component {
     constructor() {
@@ -7,9 +8,11 @@ class App extends React.Component {
             firstName: "",
             lastName: "",
             checked: false,
-            radios: ""
+            radios: "",
+            selects: "one"
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
@@ -25,9 +28,14 @@ class App extends React.Component {
         }
     }
 
+    handleSubmit(event) {
+        console.log("Submitted");
+        event.preventDefault();
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input
                     type="text"
                     value={this.state.firstName} // controlled components
@@ -40,7 +48,7 @@ class App extends React.Component {
                     name="lastName"
                     placeholder="Last Name"
                     onChange={this.handleChange}/>
-                <h1>{this.state.firstName} {this.state.lastName}</h1>
+                <h2>{this.state.firstName} {this.state.lastName}</h2>
                 <textarea
                     value={"some default value"}
                     onChange={this.handleChange}/>
@@ -63,6 +71,18 @@ class App extends React.Component {
                     value="two"
                     checked={this.state.radios === "two"}
                     onChange={this.handleChange}/>
+                <h2>{this.state.radios}</h2>
+                <br/><label for="selects">select</label>
+                <select
+                    value={this.state.selects}
+                    name="selects"
+                    onChange={this.handleChange}>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                </select>
+                <h2>{this.state.selects}</h2>
+                <button>Submit</button>
             </form>
         );
     }
