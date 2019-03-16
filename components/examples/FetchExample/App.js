@@ -21,20 +21,21 @@ class App extends React.Component {
             fetch("https://swapi.co/api/people/1")
                 .then(response => response.json()) // [then] resolve the promise
                 .then(data => {
-                    appObject.setState(function() {
+                    appObject.setState(function(prevState) {
                         return ({
-                            loading: false,
+                            loading: !prevState.loading,
                             character: data
                         });
                     });
                 }); // continue promise chain
-        }, 2500);
+        }, 999);
     }
 
     render() {
+        const text = this.state.loading ? "Loading..." : this.state.character.name;
         return (
             <div>
-                {this.state.loading ? "Loading" : "API call to get character name: " + this.state.character.name}
+                <p>API call: {text}</p>
             </div>
         )
     }
