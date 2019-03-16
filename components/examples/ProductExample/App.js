@@ -7,6 +7,28 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    // componentDidMount() {
+    //      // Often used to call API data when component is first rendered
+    // }
+
+    // componentWillReceiveProps(nextProps) {
+    //      if (nextProps.param !== this.props.param) {
+    //          updateProp(nextProps.param);
+    //       }
+    //      // Deprecated in react 16.3 with componentWillMount() and componentWillUpdate()
+    //      // Replaced with getDerivedStateFromProps() and getSnapshotBeforeUpdate()
+    // }
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return false; // don't update
+    //     // React by default re-renders components more often than not
+    //     // This allows you to choose when to re-render or not
+    // }
+
+    // componentWillUnmount() {
+    //     // Often used to cleanup event listeners, clean up code, etc
+    // }
+
     handleClick() {
         this.setState(function(prevState) {
             console.log(this.state.clicks);
