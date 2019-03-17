@@ -7,8 +7,6 @@ class MemeGenerator extends React.Component {
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: []
         }
-        // this.onChange = this.onChange.bind(this); // don't need to bind arrow functions
-        // this.generateMeme = this.generateMeme.bind(this); // don't need to bind arrow functions
     }
 
     componentDidMount() {
